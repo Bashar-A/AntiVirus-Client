@@ -295,7 +295,7 @@ namespace AntiVirus_Client
             Task selectedTask = new Task();
             selectedTask.Id = selectedTaskID;
             Virus[] viruses = client.GetVirusesFound(selectedTask);
-            label1.Text = $"Danger Found: {viruses.Length}";
+            label1.Text = $"Найденные угрозы: {viruses.Length}";
 
             flowLayoutPanelReport.Dispose();
             foreach (var r in reportRows) r.Dispose();

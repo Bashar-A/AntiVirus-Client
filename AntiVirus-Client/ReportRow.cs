@@ -32,7 +32,7 @@ namespace AntiVirus_Client
 
 
             RowCheckBox = new CheckBox();
-            RowCheckBox.Text = "Quarantine";
+            RowCheckBox.Text = "Карантин";
             RowCheckBox.Size = new System.Drawing.Size(75, 23);
             RowCheckBox.Checked = virus.InQuarantine;
             RowCheckBox.Enabled = fileExist;
@@ -42,7 +42,7 @@ namespace AntiVirus_Client
 
             RowButton = new Button();
             RowButton.Size = new System.Drawing.Size(80, 23);
-            RowButton.Text = "Delete";
+            RowButton.Text = "Удалить";
             RowButton.Enabled = fileExist;
             RowButton.Parent = control;
             RowButton.Click += TaskButton_Click;

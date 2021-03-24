@@ -30,9 +30,6 @@ namespace AntiVirus_Client
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.buttonStopService = new System.Windows.Forms.Button();
-            this.buttonStartService = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
@@ -52,47 +49,21 @@ namespace AntiVirus_Client
             this.buttonMonitor = new System.Windows.Forms.Button();
             this.buttonScan = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.label1 = new System.Windows.Forms.Label();
             this.buttonRefresh = new System.Windows.Forms.Button();
             this.listBoxTasks = new System.Windows.Forms.ListBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.label1 = new System.Windows.Forms.Label();
-            this.groupBox1.SuspendLayout();
+            this.buttonStartService = new System.Windows.Forms.Button();
+            this.buttonStopService = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.tabPage2.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.buttonStopService);
-            this.groupBox1.Controls.Add(this.buttonStartService);
-            this.groupBox1.Location = new System.Drawing.Point(837, 6);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(147, 79);
-            this.groupBox1.TabIndex = 0;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Сервис";
-            // 
-            // buttonStopService
-            // 
-            this.buttonStopService.Location = new System.Drawing.Point(6, 48);
-            this.buttonStopService.Name = "buttonStopService";
-            this.buttonStopService.Size = new System.Drawing.Size(135, 25);
-            this.buttonStopService.TabIndex = 1;
-            this.buttonStopService.Text = "Остановить";
-            this.buttonStopService.UseVisualStyleBackColor = true;
-            // 
-            // buttonStartService
-            // 
-            this.buttonStartService.Location = new System.Drawing.Point(6, 17);
-            this.buttonStartService.Name = "buttonStartService";
-            this.buttonStartService.Size = new System.Drawing.Size(135, 25);
-            this.buttonStartService.TabIndex = 1;
-            this.buttonStartService.Text = "Запускать";
-            this.buttonStartService.UseVisualStyleBackColor = true;
             // 
             // tabControl1
             // 
@@ -123,7 +94,7 @@ namespace AntiVirus_Client
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage1.Size = new System.Drawing.Size(996, 431);
             this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "tabPage1";
+            this.tabPage1.Text = "Главная";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // dateTimePicker1
@@ -292,8 +263,16 @@ namespace AntiVirus_Client
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage2.Size = new System.Drawing.Size(996, 431);
             this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "tabPage2";
+            this.tabPage2.Text = "Отчеты";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // label1
+            // 
+            this.label1.Location = new System.Drawing.Point(8, 405);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(283, 23);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Найденные угрозы: 0";
             // 
             // buttonRefresh
             // 
@@ -317,13 +296,36 @@ namespace AntiVirus_Client
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // label1
+            // buttonStartService
             // 
-            this.label1.Location = new System.Drawing.Point(8, 405);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(283, 23);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Danger Found: 0";
+            this.buttonStartService.Enabled = false;
+            this.buttonStartService.Location = new System.Drawing.Point(6, 17);
+            this.buttonStartService.Name = "buttonStartService";
+            this.buttonStartService.Size = new System.Drawing.Size(135, 25);
+            this.buttonStartService.TabIndex = 1;
+            this.buttonStartService.Text = "Запускать";
+            this.buttonStartService.UseVisualStyleBackColor = true;
+            // 
+            // buttonStopService
+            // 
+            this.buttonStopService.Enabled = false;
+            this.buttonStopService.Location = new System.Drawing.Point(6, 48);
+            this.buttonStopService.Name = "buttonStopService";
+            this.buttonStopService.Size = new System.Drawing.Size(135, 25);
+            this.buttonStopService.TabIndex = 1;
+            this.buttonStopService.Text = "Остановить";
+            this.buttonStopService.UseVisualStyleBackColor = true;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.buttonStopService);
+            this.groupBox1.Controls.Add(this.buttonStartService);
+            this.groupBox1.Location = new System.Drawing.Point(837, 6);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(147, 79);
+            this.groupBox1.TabIndex = 0;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Сервис";
             // 
             // Form1
             // 
@@ -334,7 +336,6 @@ namespace AntiVirus_Client
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form1";
             this.Text = "AntiVirus";
-            this.groupBox1.ResumeLayout(false);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
@@ -343,15 +344,12 @@ namespace AntiVirus_Client
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.tabPage2.ResumeLayout(false);
+            this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button buttonStopService;
-        private System.Windows.Forms.Button buttonStartService;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
@@ -375,6 +373,9 @@ namespace AntiVirus_Client
         private System.Windows.Forms.ListBox listBoxTasks;
         private System.Windows.Forms.Button buttonRefresh;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Button buttonStopService;
+        private System.Windows.Forms.Button buttonStartService;
     }
 }
 
